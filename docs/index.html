@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>The Morgue</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+
+  <link rel="stylesheet" href="style.min.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+<style>
+  :root {
+    --cover-background-color: black;
+    --cover-background-image: radial-gradient(ellipse at center bottom, var(--mono-tint), transparent);
+    --content-max-width: 75em;
+  }
+</style>
+
+  <script>
+        // Docsify
+        window.$docsify = {
+            // GENERAL
+            // -----------------------------------------------------------------
+            name       : 'DevDocs',
+            repo       : 'https://github.com/JamesBarn35/DevDocs',
+            coverpage  : 'coverpage.md',
+            homepage   : 'introduction.md',
+            loadSidebar: 'sidebar.md',
+
+            // NAVIGATION
+            // -----------------------------------------------------------------
+            alias: {
+                '.*?/changelog': 'https://raw.githubusercontent.com/JamesBarn35/DevDocs/main/CHANGELOG.md',
+            },
+            auto2top   : true,
+            maxLevel   : 3,
+            subMaxLevel: 3,
+
+            // PLUGINS
+            // -----------------------------------------------------------------
+            executeScript: true,
+            search: {
+                depth      : 3,
+                noData     : 'No results!',
+                placeholder: 'Search...'
+            }
+        };
+    </script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+<script src="//unpkg.com/docsify@latest/lib/docsify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+<script src="//unpkg.com/docsify@latest/lib/plugins/external-script.min.js"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+</html>

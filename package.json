@@ -1,0 +1,88 @@
+{
+  "name": "DevDocs",
+  "description": "A place for everything dev",
+  "homepage": "https://github.com/JamesBarn35/DevDocs",
+  "version": "1.0.0",
+  "main": "README.md",
+  "contributors": [
+    {
+      "name": "James Barnes",
+      "email": "JamesBarn35@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesBarn35/DevDocs"
+  },
+  "bugs": {
+    "url": "https://github.com/JamesBarn35/DevDocs/issues"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "browser-sync": "latest",
+    "concurrently": "latest",
+    "conventional-github-releaser": "latest",
+    "docsify-cli": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-sass": "latest",
+    "gulp-strip-css-comments": "latest",
+    "gulp-uglify": "latest",
+    "lint-staged": "latest",
+    "npm-check-updates": "latest",
+    "prettier-standard": "latest",
+    "sass": "latest",
+    "simple-git-hooks": "latest",
+    "standard": "latest",
+    "standard-markdown": "latest",
+    "standard-version": "latest"
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "files": [
+    "docs",
+    "gulpfile.js",
+    "src"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "dev": "concurrently \"gulp\" \"npm run server:dev\"",
+    "lint": "standard-markdown docs/**/*.md !docs/v8-tips/freeing-memory.md !docs/workflow/scope.md !docs/regexp/flags.md !docs/array/preallocation.md",
+    "postrelease": "npm run release:tags && npm run release:github",
+    "prerelease": "npm run update:check",
+    "pretest": "npm run lint",
+    "release": "standard-version -a",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:tags": "git push --follow-tags origin HEAD:master",
+    "server:dev": "cd docs && browser-sync start --server --files \"index.html, **/*.md, main.min.js, style.min.css\"",
+    "start": "docsify start docs",
+    "test": "echo 'no tests yet' && exit 0",
+    "update": "ncu -u",
+    "update:check": "ncu -- --error-level 2"
+  },
+  "private": true,
+  "license": "MIT",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "package.json": [
+      "finepack"
+    ],
+    "*.js,!*.min.js,": [
+      "prettier-standard"
+    ],
+    "*.md": [
+      "standard-markdown"
+    ]
+  }
+}
