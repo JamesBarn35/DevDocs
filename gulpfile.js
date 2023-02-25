@@ -9,8 +9,8 @@ const concat = require('gulp-concat')
 const gulp = require('gulp')
 
 const src = {
-  css: ['src/sass/style.scss'],
-  js: ['src/js/main.js']
+  css: ['src/pages/sass/style.scss'],
+  js: ['src/pages/js/main.js']
 }
 
 const dist = {
